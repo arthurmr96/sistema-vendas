@@ -174,6 +174,7 @@ return [
         Yajra\DataTables\ButtonsServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
+        InfyOm\GeneratorBuilder\GeneratorBuilderServiceProvider::class,
         /*
          * Application Service Providers...
          */
