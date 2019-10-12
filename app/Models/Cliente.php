@@ -15,8 +15,35 @@ use Eloquent as Model;
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="name",
- *          description="name",
+ *          property="nome",
+ *          description="nome",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="sobrenome",
+ *          description="sobrenome",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="telefone",
+ *          description="telefone",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="email",
+ *          description="email",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="celular",
+ *          description="celular",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="endereco",
+ *          description="endereco",
  *          type="string"
  *      ),
  *      @SWG\Property(
@@ -41,7 +68,12 @@ class Cliente extends Model
 
 
     public $fillable = [
-        'name'
+        'nome',
+        'sobrenome',
+        'telefone',
+        'email',
+        'celular',
+        'endereco'
     ];
 
     /**
@@ -51,7 +83,12 @@ class Cliente extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string'
+        'nome' => 'string',
+        'sobrenome' => 'string',
+        'telefone' => 'integer',
+        'email' => 'string',
+        'celular' => 'integer',
+        'endereco' => 'string'
     ];
 
     /**
