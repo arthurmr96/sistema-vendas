@@ -30,3 +30,7 @@ Route::post('generator_builder/generate', '\InfyOm\GeneratorBuilder\Controllers\
 Route::post('generator_builder/rollback', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@rollback');
 
 Route::post('generator_builder/generate-from-file', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile');
+
+
+
+Route::resource('clientes', 'ClienteController');
