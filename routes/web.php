@@ -36,3 +36,13 @@ Route::post('generator_builder/generate-from-file', '\InfyOm\GeneratorBuilder\Co
 
 
 Route::resource('clientes', 'ClienteController');
+
+Route::resource('produtos', 'ProdutoController');
+
+Route::resource('caixas', 'CaixaController');
+
+Route::resource('contasPagars', 'ContasPagarController');
+
+Route::resource('convenios', 'ConvenioController');
+
+Route::resource('vendas', 'VendaController');

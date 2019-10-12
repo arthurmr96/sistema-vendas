@@ -23,3 +23,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::resource('clientes', 'ClienteAPIController');
+
+Route::resource('produtos', 'ProdutoAPIController');
+
+Route::resource('caixas', 'CaixaAPIController');
+
+Route::resource('contas_pagars', 'ContasPagarAPIController');
+
+Route::resource('convenios', 'ConvenioAPIController');
+
+Route::resource('vendas', 'VendaAPIController');
