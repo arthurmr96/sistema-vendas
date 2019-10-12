@@ -11,7 +11,7 @@
             </div>
             <div class="pull-left info">
                 @if (Auth::guest())
-                <p>InfyOm</p>
+                <p>{{ env('APP_NAME') }}</p>
                 @else
                     <p>{{ Auth::user()->name}}</p>
                 @endif
