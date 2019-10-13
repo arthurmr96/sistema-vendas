@@ -2,7 +2,7 @@
     <table class="table" id="convenios-table">
         <thead>
             <tr>
-                <th>Cliente Id</th>
+                <th>Cliente</th>
         <th>Valor</th>
         <th>Data Vencimento</th>
         <th>Pago</th>
@@ -12,10 +12,10 @@
         <tbody>
         @foreach($convenios as $convenio)
             <tr>
-                <td>{!! $convenio->cliente_id !!}</td>
+                <td>{!! $convenio->cliente->nome !!}</td>
             <td>{!! $convenio->valor !!}</td>
-            <td>{!! $convenio->data_vencimento !!}</td>
-            <td>{!! $convenio->pago !!}</td>
+            <td>{!! \Carbon\Carbon::parse($convenio->data_vencimento)->format('d/m/Y') !!}</td>
+            <td>{!! $convenio->pago === 1 ? __('Yes') : __('No') !!}</td>
                 <td>
                     {!! Form::open(['route' => ['convenios.destroy', $convenio->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

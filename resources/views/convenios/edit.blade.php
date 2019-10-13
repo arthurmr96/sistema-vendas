@@ -13,7 +13,10 @@
                <div class="row">
                    {!! Form::model($convenio, ['route' => ['convenios.update', $convenio->id], 'method' => 'patch']) !!}
 
-                        @include('convenios.fields')
+                        @include('convenios.fields', [
+                        'clientes' => \App\Models\Cliente::pluck('nome', 'id'),
+                        'selected' => $convenio->cliente
+                        ])
 
                    {!! Form::close() !!}
                </div>

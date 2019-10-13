@@ -1,3 +1,9 @@
+<!-- Cliente Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('cliente_id', 'Cliente:') !!}
+    {!! Form::select('cliente_id', $clientes, $selected, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Valor Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('valor', 'Valor:') !!}
@@ -14,17 +20,16 @@
 <div class="form-group col-sm-12">
     {!! Form::label('pago', 'Pago:') !!}
     <label class="radio-inline">
-        {!! Form::radio('pago', "Sim", null) !!} Sim
+        {!! Form::radio('pago', 1, null) !!} {{ __('Yes') }}
     </label>
 
     <label class="radio-inline">
-        {!! Form::radio('pago', " Nao", null) !!}  Nao
+        {!! Form::radio('pago', 0, null) !!} {{ __('No') }}
     </label>
-
 </div>
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! route('convenios.index') !!}" class="btn btn-default">Cancel</a>
+    {!! Form::submit(__('Save'), ['class' => 'btn btn-primary']) !!}
+    <a href="{!! route('convenios.index') !!}" class="btn btn-default">{{ __('Cancel') }}</a>
 </div>

@@ -112,7 +112,7 @@ class ConvenioAPIController extends AppBaseController
 
         $convenio = $this->convenioRepository->create($input);
 
-        return $this->sendResponse($convenio->toArray(), 'Convenio saved successfully');
+        return $this->sendResponse($convenio->toArray(), __('Convenio saved successfully'));
     }
 
     /**

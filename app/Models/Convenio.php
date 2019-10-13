@@ -55,8 +55,10 @@ class Convenio extends Model
 {
 
     public $table = 'convenios';
-    
 
+    public $with = ['cliente'];
+
+    public $hidden = ['cliente_id'];
 
     public $fillable = [
         'cliente_id',
@@ -90,8 +92,8 @@ class Convenio extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function client()
+    public function cliente()
     {
-        return $this->belongsTo(\App\Models\Client::class);
+        return $this->belongsTo(\App\Models\Cliente::class);
     }
 }
