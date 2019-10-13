@@ -13,7 +13,7 @@
         @foreach($convenios as $convenio)
             <tr>
                 <td>{!! $convenio->cliente->nome !!}</td>
-            <td>{!! $convenio->valor !!}</td>
+            <td>{!! __('$') .' ' . $convenio->valor !!}</td>
             <td>{!! \Carbon\Carbon::parse($convenio->data_vencimento)->format('d/m/Y') !!}</td>
             <td>{!! $convenio->pago === 1 ? __('Yes') : __('No') !!}</td>
                 <td>
