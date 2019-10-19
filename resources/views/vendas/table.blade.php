@@ -2,8 +2,8 @@
     <table class="table" id="vendas-table">
         <thead>
             <tr>
-                <th>Cliente Id</th>
-        <th>User Id</th>
+                <th>Cliente</th>
+        <th>Usuário</th>
         <th>Valor</th>
                 <th colspan="3">Action</th>
             </tr>
@@ -11,9 +11,9 @@
         <tbody>
         @foreach($vendas as $venda)
             <tr>
-                <td>{!! $venda->cliente_id !!}</td>
-            <td>{!! $venda->user_id !!}</td>
-            <td>{!! $venda->valor !!}</td>
+                <td>{!! $venda->cliente->nome !!}</td>
+            <td>{!! $venda->user->name !!}</td>
+            <td>R$ {!! number_format($venda->valor, 2, ',', '.') !!}</td>
                 <td>
                     {!! Form::open(['route' => ['vendas.destroy', $venda->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

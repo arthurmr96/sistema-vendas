@@ -80,6 +80,8 @@ class Venda extends Model
         
     ];
 
+    protected $with = ['cliente', 'user'];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
@@ -93,6 +95,6 @@ class Venda extends Model
      **/
     public function user()
     {
-        return $this->belongsTo(\App\Models\User::class);
+        return $this->belongsTo(\App\User::class);
     }
 }

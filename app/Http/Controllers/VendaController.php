@@ -8,6 +8,7 @@ use App\Repositories\VendaRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Support\Facades\Auth;
 use Response;
 
 class VendaController extends AppBaseController
@@ -55,6 +56,8 @@ class VendaController extends AppBaseController
     public function store(CreateVendaRequest $request)
     {
         $input = $request->all();
+
+        $input['user_id'] = Auth::id();
 
         $venda = $this->vendaRepository->create($input);
 
@@ -121,7 +124,11 @@ class VendaController extends AppBaseController
             return redirect(route('vendas.index'));
         }
 
-        $venda = $this->vendaRepository->update($request->all(), $id);
+        $input = $request->all();
+
+        $input['user_id'] = Auth::id();
+
+        $venda = $this->vendaRepository->update($input, $id);
 
         Flash::success('Venda updated successfully.');
 

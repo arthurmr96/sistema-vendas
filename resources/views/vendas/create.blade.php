@@ -14,7 +14,10 @@
                 <div class="row">
                     {!! Form::open(['route' => 'vendas.store']) !!}
 
-                        @include('vendas.fields')
+                        @include('vendas.fields', [
+                        'clientes' => \App\Models\Cliente::all()->pluck('nome', 'id'),
+                        'selected' => null
+                        ])
 
                     {!! Form::close() !!}
                 </div>

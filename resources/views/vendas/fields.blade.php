@@ -1,3 +1,9 @@
+<!-- Cliente Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('cliente_id', 'Cliente:') !!}
+    {!! Form::select('cliente_id', $clientes, $selected, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Valor Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('valor', 'Valor:') !!}
