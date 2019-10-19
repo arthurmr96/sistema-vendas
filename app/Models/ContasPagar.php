@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enum\PagarConta\Pago;
 use Eloquent as Model;
 
 /**
@@ -51,7 +52,7 @@ use Eloquent as Model;
  *      )
  * )
  */
-class ContasPagar extends Model
+class ContasPagar extends Model implements Pago
 {
 
     public $table = 'pagar_contas';

@@ -14,11 +14,11 @@
 <div class="form-group col-sm-12">
     {!! Form::label('pago', 'Pago:') !!}
     <label class="radio-inline">
-        {!! Form::radio('pago', "Sim", null) !!} Sim
+        {!! Form::radio('pago', \App\Enum\PagarConta\Pago::SIM, null) !!} Sim
     </label>
 
     <label class="radio-inline">
-        {!! Form::radio('pago', " Nao", null) !!}  Nao
+        {!! Form::radio('pago', \App\Enum\PagarConta\Pago::NAO, null) !!}  Nao
     </label>
 
 </div>

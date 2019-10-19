@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enum\Produto\Tipo;
 use Eloquent as Model;
 
 /**
@@ -61,11 +62,11 @@ use Eloquent as Model;
  *      )
  * )
  */
-class Produto extends Model
+class Produto extends Model implements Tipo
 {
 
     public $table = 'produtos';
-    
+
 
 
     public $fillable = [

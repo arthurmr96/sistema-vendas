@@ -13,19 +13,19 @@
 <!-- Tipo Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('tipo', 'Tipo:') !!}
-    {!! Form::select('tipo', ['Unitario' => 'Unitario', ' Caixa' => ' Caixa'], null, ['class' => 'form-control']) !!}
+    {!! Form::select('tipo', [\App\Enum\Produto\Tipo::UNITARIO => 'Unitario', \App\Enum\Produto\Tipo::CAIXA => 'Caixa'], null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Preco Custo Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('preco_custo', 'Preco Custo:') !!}
-    {!! Form::number('preco_custo', null, ['class' => 'form-control']) !!}
+    {!! Form::text('preco_custo', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Valor Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('valor', 'Valor:') !!}
-    {!! Form::number('valor', null, ['class' => 'form-control']) !!}
+    {!! Form::text('valor', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Quantidade Field -->
